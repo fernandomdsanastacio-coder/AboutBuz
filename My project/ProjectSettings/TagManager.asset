@@ -5,12 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - chao
-  - Agarrar
   - AgarrarT
   - Playertag
   - kill
   - passagem
-  - FirstGrab
+  - estatua
   layers:
   - Default
   - TransparentFX

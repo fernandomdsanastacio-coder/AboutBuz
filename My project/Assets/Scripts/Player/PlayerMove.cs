@@ -7,10 +7,10 @@ public class PlayerMove : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float speed;
     public float jumpforce=7f;
-    private bool jump;
     private Rigidbody2D rb2d;
     public InputAction Moveaction;
     public InputAction Jump;
+    
 
     [SerializeField] private LayerMask chaolayer;
     [SerializeField] private Transform pes;

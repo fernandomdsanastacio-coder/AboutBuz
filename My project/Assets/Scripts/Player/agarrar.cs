@@ -18,6 +18,7 @@ public class agarrar : MonoBehaviour
     public bool firstGrabbool = false;
     public int segundos=500;
     
+    
 
     void Start()
     {

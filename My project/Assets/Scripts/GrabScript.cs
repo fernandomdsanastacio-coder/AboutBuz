@@ -1,6 +1,5 @@
-using System.Collections.Generic;
+
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -28,19 +27,15 @@ public class GrabScript : MonoBehaviour
             //Procura o script agarrar no player - primeiro no próprio objeto, depois no pai e depois nos filhos
             agarrar agarrarscript = other.GetComponent<agarrar>()
                 ?? other.GetComponentInParent<agarrar>()//?? significa "se for null, tenta o seguinte"
-                ?? other.GetComponentInChildren<agarrar>();
+                ?? other.GetComponentInChildren<agarrar>();// igual
             if (agarrarscript == null)
             {
-                Debug.Log("nao encontrado");    
+                Debug.Log("nao encontrado");// ainda não aconteceu
                 return;
             }
             if (agarrarscript.Grab == null)
             {
                 agarrarscript.Grab = transform;
-                if (texto!=null)
-                texto.text = "Press F";
-
-                
             }
 
         }
@@ -59,14 +54,7 @@ public class GrabScript : MonoBehaviour
             if (agarrarscript.Grab == transform)
             {
                 agarrarscript.Grab = null;
-
-                if (texto != null) texto.text = "";
             }
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
