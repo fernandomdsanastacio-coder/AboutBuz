@@ -10,6 +10,7 @@ TagManager:
   - kill
   - passagem
   - estatua
+  - parede
   layers:
   - Default
   - TransparentFX

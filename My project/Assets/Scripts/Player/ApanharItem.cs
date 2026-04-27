@@ -8,19 +8,21 @@ public class ApanharItem : MonoBehaviour
     public InputAction apanhar;
     [SerializeField] private GameObject player;
     bool entroutrigger=false;
+    bool apanhou=false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         apanhar.Enable();
-
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("estatua"))
         {
-            texto.gameObject.SetActive(true);
+            if (apanhou==false)
+                texto.gameObject.SetActive(true);
             entroutrigger = true;
         }
     }
@@ -28,7 +30,9 @@ public class ApanharItem : MonoBehaviour
     {
         if (collision.CompareTag("estatua"))
         {
+            
             texto.gameObject.SetActive(false);
+
             entroutrigger= false;
         }
     }
@@ -40,6 +44,11 @@ public class ApanharItem : MonoBehaviour
             Debug.Log("Ativou");
             agarrar agarrarscript = player.GetComponent<agarrar>();
             agarrarscript.enabled = true;
+            apanhou=true;
+        }
+        if(apanhou)
+        {
+            texto.gameObject.SetActive(false);
         }
     }
 }
