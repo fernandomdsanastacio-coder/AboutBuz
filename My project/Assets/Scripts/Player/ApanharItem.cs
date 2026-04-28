@@ -9,12 +9,17 @@ public class ApanharItem : MonoBehaviour
     [SerializeField] private GameObject player;
     bool entroutrigger=false;
     bool apanhou=false;
+    bool podeclicar=true;
+    bool menuAberto = false;
+    public GameObject PanelHability;
+
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         apanhar.Enable();
-        
+        PanelHability.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,8 +37,7 @@ public class ApanharItem : MonoBehaviour
         {
             
             texto.gameObject.SetActive(false);
-
-            entroutrigger= false;
+            entroutrigger = false;
         }
     }
     // Update is called once per frame
@@ -45,10 +49,26 @@ public class ApanharItem : MonoBehaviour
             agarrar agarrarscript = player.GetComponent<agarrar>();
             agarrarscript.enabled = true;
             apanhou=true;
+            menuAberto = true;
+            if(menuAberto&&podeclicar)
+            {
+                PanelHability.SetActive(true);
+                Time.timeScale = 0f;
+            }
+            
         }
         if(apanhou)
         {
             texto.gameObject.SetActive(false);
+            
         }
+    }
+      
+    public void Click()
+    {
+        PanelHability.SetActive(false);
+        Time.timeScale = 1f;
+        menuAberto = false;
+        podeclicar = false;
     }
 }

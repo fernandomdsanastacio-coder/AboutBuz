@@ -56,7 +56,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.collider.CompareTag("parede"))
         {
-            paredenormal = 0f;
+            paredenormal = 0f; 
         }
     }
 
