@@ -11,6 +11,8 @@ TagManager:
   - passagem
   - estatua
   - parede
+  - enemy
+  - atackplayer
   layers:
   - Default
   - TransparentFX
