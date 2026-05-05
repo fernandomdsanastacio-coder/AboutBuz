@@ -9,7 +9,7 @@ public class passagemscript : MonoBehaviour
     {
         if(collision.collider.CompareTag("Playertag"))
         {
-            SceneManager.LoadScene("1º Boss");
+            SceneManager.LoadScene("Boss n1");
         }
     }
     // Update is called once per frame

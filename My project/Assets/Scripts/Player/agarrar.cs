@@ -17,6 +17,7 @@ public class agarrar : MonoBehaviour
     private Vector2 direcaoGrab;
     public bool firstGrabbool = false;
     public int segundos=500;
+
     
     
 
@@ -34,6 +35,7 @@ public class agarrar : MonoBehaviour
         if (Grab == null || rb2 == null) return;
 
         direcaoGrab = ((Vector2)Grab.position - (Vector2)transform.position).normalized;
+        
         aGarrar = true;
 
         rb2.gravityScale = 0f;
@@ -76,7 +78,7 @@ public class agarrar : MonoBehaviour
 
             rb2.linearVelocity = direcaoGrab * forceGrab;
 
-            // chegou ao objeto → para
+            // chegou ao objeto - para
             float distancia = Vector2.Distance(transform.position, Grab.position);
             if (distancia < 0.5f)
             {
